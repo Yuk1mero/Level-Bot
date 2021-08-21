@@ -54,6 +54,12 @@ client.on("messageCreate", async (message) => {
         message.channel.send(`${message.author} You have leveled up to ${users.level}. Now You Need ${other} More Exp To Level Up Again`)
       }
       users.save().catch(error => console.log(error));
+      if (users.level === `5`){
+        var role5 = message.guild.roles.cache.find(role => role.id === "876757301187452929");
+        message.author.roles.add(role5)
+        }
+      
+      
 
     }
   });
